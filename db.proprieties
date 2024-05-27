@@ -1,0 +1,4 @@
+user=root
+password=#wQum9m*
+url=jdbc:mysql://34.95.205.195:3306/escola
+useSSl=false
