@@ -16,11 +16,12 @@ public class DB {
                 Properties props = loadProperties();
                 String url = props.getProperty("url");
                 conn = DriverManager.getConnection(url, props);
-            }catch (SQLException e)
+            }
+            catch (SQLException e)
             {
                 throw new DbException(e.getMessage());
             }
-            }
+        }
         return conn;
     }
 

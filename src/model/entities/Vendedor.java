@@ -108,4 +108,5 @@ public class Vendedor implements Serializable {
                 ", departamento=" + departamento +
                 '}';
     }
+
 }
