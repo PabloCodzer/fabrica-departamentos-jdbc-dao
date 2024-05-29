@@ -1,3 +1,5 @@
+package model;
+
 import javax.xml.transform.Result;
 import java.io.FileInputStream;
 import java.io.FilterInputStream;
@@ -9,7 +11,7 @@ public class DB {
 
     private static Connection conn = null;
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection(){
         if( conn == null )
         {
             try {
@@ -19,7 +21,7 @@ public class DB {
             }
             catch (SQLException e)
             {
-                throw new DbException(e.getMessage());
+                throw new RuntimeException(e);
             }
         }
         return conn;
@@ -34,7 +36,7 @@ public class DB {
             }
             catch (SQLException e)
             {
-                throw new DbException(e.getMessage());
+                throw new RuntimeException(e);
             }
         }
     }
@@ -47,7 +49,7 @@ public class DB {
         }
         catch (IOException e)
         {
-            throw new DbException(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -60,7 +62,7 @@ public class DB {
             }
             catch (SQLException e)
             {
-                throw new DbException(e.getMessage());
+                throw new RuntimeException(e);
             }
         }
     }
@@ -74,7 +76,7 @@ public class DB {
             }
             catch (SQLException e)
             {
-                throw new DbException(e.getMessage());
+                throw new RuntimeException(e);
             }
         }
     }

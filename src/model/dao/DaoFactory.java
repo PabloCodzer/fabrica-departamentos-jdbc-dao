@@ -1,6 +1,9 @@
 package model.dao;
 
+import model.DB;
 import model.daiJDBC.VendedorDaoJDBC;
+
+import java.sql.SQLException;
 
 public class DaoFactory {
 
@@ -10,7 +13,7 @@ public class DaoFactory {
 
     public static vendedorDao createVendedorDAO()
     {
-        return new VendedorDaoJDBC();
+        return new VendedorDaoJDBC(DB.getConnection());
     }
 
 }
